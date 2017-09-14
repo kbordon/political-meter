@@ -1,5 +1,3 @@
-
-
 $(document).ready(function() {
   $("#formPolitics").submit(function(event){
     var conservativeTally = 0;
@@ -57,17 +55,15 @@ $(document).ready(function() {
     }
 
     if ( conservativeTally > moderateTally && conservativeTally > liberalTally) {
-      alert("conserative.");
+      $("#liberal, #moderate"). hide();
+      $("#conservative").show();
     } else if ( liberalTally > moderateTally && liberalTally > conservativeTally) {
-      alert("liberal.");
+      $("#conservative, #moderate"). hide();
+      $("#liberal").show();
     } else {
-      alert("moderate.");
+      $("#liberal, #conservative"). hide();
+      $("#moderate").show();
     }
-
-
-    alert(conservativeTally);
-    alert(moderateTally);
-    alert(liberalTally);
 
 
     event.preventDefault();
